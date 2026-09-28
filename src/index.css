@@ -1,0 +1,74 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Figtree', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+
+  --color-brand: #003be2;
+  --color-brand-line: #1f53e6;
+  --color-lime: #d4fb20;
+  --color-lime-dark: #c3e813;
+  --color-ink: #242528;
+  --color-muted: #6f7075;
+  --color-line: #e4e4e7;
+  --color-soft: #f3f3f4;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white font-sans text-ink antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+  }
+}
+
+@utility container-page {
+  @apply mx-auto w-full max-w-[1232px] px-4 sm:px-6;
+}
+
+/* Blue canvas with the 120px grid from the design. Lines are anchored to the
+   horizontal centre so they stay aligned with the artwork at any width. */
+@utility bg-grid {
+  background-color: var(--color-brand);
+  background-image:
+    linear-gradient(var(--color-brand-line) 2px, transparent 2px),
+    linear-gradient(90deg, var(--color-brand-line) 2px, transparent 2px);
+  background-size: 120px 120px;
+  background-position:
+    calc(50% + 60px) -2px,
+    calc(50% + 60px) -2px;
+}
+
+/* Soft lime / blue light blobs used behind the light sections. */
+@utility bg-glow {
+  background-color: #f8f8f8;
+  background-image:
+    radial-gradient(38% 30% at 22% 12%, rgb(220 250 90 / 0.55), transparent 70%),
+    radial-gradient(30% 30% at 4% 55%, rgb(140 165 240 / 0.45), transparent 70%),
+    radial-gradient(35% 25% at 98% 3%, rgb(140 165 240 / 0.35), transparent 70%),
+    radial-gradient(30% 25% at 2% 95%, rgb(220 250 90 / 0.5), transparent 70%),
+    radial-gradient(30% 25% at 95% 98%, rgb(140 165 240 / 0.45), transparent 70%);
+}
+
+@utility bg-glow-alt {
+  background-color: #f8f8f8;
+  background-image:
+    radial-gradient(35% 45% at 50% 25%, rgb(220 250 90 / 0.55), transparent 70%),
+    radial-gradient(30% 50% at 100% 60%, rgb(220 250 90 / 0.45), transparent 70%),
+    radial-gradient(28% 40% at 0% 90%, rgb(140 165 240 / 0.45), transparent 70%);
+}
+
+/* Feathers an image's edges so baked-in backgrounds melt into the section gradient. */
+@utility fade-edges {
+  mask-image:
+    linear-gradient(to right, transparent, #000 12%, #000 88%, transparent),
+    linear-gradient(to bottom, transparent, #000 10%, #000 90%, transparent);
+  mask-composite: intersect;
+}
