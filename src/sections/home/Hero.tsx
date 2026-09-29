@@ -42,7 +42,7 @@ export default function Hero() {
       {/* The artwork is laid out on the design's 1440×782 canvas and scaled as one unit. */}
       <div
         aria-hidden
-        className="pointer-events-none relative -mt-[calc(274px*var(--s))] h-[calc(782px*var(--s))] [--s:0.5] sm:[--s:0.62] md:[--s:0.75] lg:[--s:0.9] xl:[--s:1]"
+        className="pointer-events-none relative -mt-[calc(274px*var(--s))] h-[calc(782px*var(--s))] [--s:0.46] sm:[--s:0.62] md:[--s:0.75] lg:[--s:0.9] xl:[--s:1]"
       >
         <div
           className="absolute top-0 left-1/2 h-[782px] w-[1440px] origin-top"

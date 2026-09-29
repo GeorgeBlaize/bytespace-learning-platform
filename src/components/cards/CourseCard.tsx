@@ -27,7 +27,7 @@ export default function CourseCard({ course }: { course: Course }) {
       </div>
 
       <div className="mt-5 flex items-start justify-between gap-3">
-        <h3 className="truncate text-xl font-medium text-ink">
+        <h3 className="min-w-0 truncate text-xl font-medium text-ink">
           <a href="#" className="hover:text-brand">
             {course.title}
           </a>
