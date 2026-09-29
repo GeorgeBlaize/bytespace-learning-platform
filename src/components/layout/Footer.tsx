@@ -17,10 +17,10 @@ export default function Footer() {
   return (
     <footer className="border-t border-line bg-white">
       <div className="container-page grid gap-12 pt-16 pb-16 lg:grid-cols-[1fr_580px] lg:pt-[68px] lg:pb-[140px]">
-        <div className="max-w-[504px]">
+        <div className="min-w-0 max-w-[504px]">
           <Logo tone="dark" />
           <p className="mt-4 text-sm text-ink">Stay Up to date with our latest features and releases by joining our newsletter.</p>
-          <form onSubmit={handleSubmit} className="mt-12 flex gap-6">
+          <form onSubmit={handleSubmit} className="mt-12 flex gap-3 sm:gap-6">
             <label htmlFor="newsletter-email" className="sr-only">
               Email address
             </label>
